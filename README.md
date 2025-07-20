@@ -2,6 +2,7 @@
 
 - node 22
 - TODO change state name
+- flags from https://github.com/lipis/flag-icons
 
 # React + TypeScript + Vite
 
