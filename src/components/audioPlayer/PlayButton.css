@@ -9,6 +9,11 @@
     border-radius: 100%;
     background: #121212;
     border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background: #232323;
 }
 
 .play-button-icon {
