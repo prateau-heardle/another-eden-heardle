@@ -7,7 +7,7 @@ const App = () => {
 
     return (
         <HeardleContext>
-            <main>
+            <main className='main'>
                 <Header />
                 <Content />
             </main>

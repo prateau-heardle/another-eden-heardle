@@ -6,6 +6,7 @@ import AttemptList from './attempts/AttemptList.tsx'
 import Search from './search/Search.tsx'
 import { useHeardleContext } from '../context/HeardleContext.tsx'
 import { HEARDLE_SPLITS } from '../config/consts.ts'
+import './Content.css'
 
 const Content = () => {
     const { gameState } = useHeardleContext()
@@ -16,19 +17,28 @@ const Content = () => {
     if (isFinished) {
         return (
             <>
-                <Answer />
-                <Share />
-                <TimerToNext />
-                <AudioPlayer isFinished/>
+                <div className='content-middle'>
+                    <Answer />
+                    <Share />
+                    <TimerToNext />
+                </div>
+                <div className='content-bottom'>
+                    <AudioPlayer isFinished/>
+                </div>
             </>
         )
     }
 
     return (
         <>
-            <AttemptList />
-            <AudioPlayer />
-            <Search />
+            <div className='content-middle'>
+                <AttemptList />
+                <div />
+            </div>
+            <div className='content-bottom'>
+                <AudioPlayer />
+                <Search />
+            </div>
         </>
     )
 }

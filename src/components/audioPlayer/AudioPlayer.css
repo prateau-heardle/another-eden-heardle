@@ -10,9 +10,15 @@
 
     margin: auto;
     width: fit-content;
+    padding-right: 16px;
+    padding-left: 16px;
 
     color: #888888;
     font-size: 0.875rem;
+}
+
+.player-help p {
+    text-align: center;
 }
 
 .play-button-line {
@@ -30,6 +36,8 @@
 .player-loading {
     margin: auto;
     width: fit-content;
+    padding-right: 16px;
+    padding-left: 16px;
 
     color: #888888;
     font-size: 0.875rem;
