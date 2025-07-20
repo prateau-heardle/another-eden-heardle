@@ -67,9 +67,9 @@ const Search = () => {
 							<Option
 								music={music}
 								onSelect={() => {
-									console.log(music)
 									setSelectedMusic(music)
 									setSearch(music.name[language])
+									inputRef.current?.blur()
 								}}
 							/>
 						))}

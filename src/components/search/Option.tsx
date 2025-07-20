@@ -15,6 +15,7 @@ const Option = ({ music, onSelect }: Props) => {
 			key={music.id}
             className='option'
 			onClick={onSelect}
+			onMouseDown={e => e.preventDefault()}
 			role='option'
 		>
 			{music.name[language]} - {music.category[language]}
