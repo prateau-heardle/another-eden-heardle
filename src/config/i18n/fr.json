@@ -19,6 +19,18 @@
     }
   },
   "endPage": {
-    "timer": "Prochaine Musique de $t(heardleName) dans :"
+    "timer": "Prochaine Musique de $t(heardleName) dans :",
+    "lose": "Vous n'avez pas trouvé la musique $t(heardleName) d'aujourd'hui. Réessayez demain...",
+    "win_one": "Vous avez trouvé la musique Pokémon Donjon Mystère d'aujourd'hui en {{count}} seconde.",
+    "win_other": "Vous avez trouvé la musique Pokémon Donjon Mystère d'aujourd'hui en {{count}} secondes.",
+    "share": "Partager",
+    "copied": "Copié dans le presse papier !",
+    "message": {
+      "title": "$t(heardleName) Heardle du {{date}}",
+      "win_one": "Vous avez trouvé la musique Pokémon Donjon Mystère d'aujourd'hui en {{count}} seconde.",
+      "win_other": "Vous avez trouvé la musique Pokémon Donjon Mystère d'aujourd'hui en {{count}} secondes.",
+      "lose": "Vous n'avez pas trouvé la musique $t(heardleName) d'aujourd'hui",
+      "link": "https://github.com/prateau/heardle-react"
+    }
   }
 }

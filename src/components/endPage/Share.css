@@ -1,0 +1,54 @@
+.share-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.score {
+    font-size: 1.25rem;
+    color: #888888;
+}
+
+.recap-container {
+    display: flex;
+    gap: 4px;
+}
+
+.recap-block {
+    height: 4px;
+    width: 16px;
+}
+
+.recap-block--fail {
+    background: #ff0000;
+}
+
+.recap-block--skip {
+    background: #444444;
+}
+
+.recap-block--win {
+    background: #1d7e05;
+}
+
+.recap-block--empty {
+    background: #ffffff;
+}
+
+.recap-phrase {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.share-copied {
+    font-size: 1rem;
+    color: #888888;
+}

@@ -19,6 +19,18 @@
     }
   },
   "endPage": {
-    "timer": "Next $t(heardleName) song in:"
+    "timer": "Next $t(heardleName) song in:",
+    "lose": "You didn't get today's $t(heardleName) music. Better luck Tomorrow...",
+    "win_one": "You got today's Pokémon Mystery Dungeon music within {{count}} second.",
+    "win_other": "You got today's Pokémon Mystery Dungeon music within {{count}} seconds.",
+    "share": "Share",
+    "copied": "Copied to Clipboard!",
+    "message": {
+      "title": "$t(heardleName) Heardle",
+      "win_one": "You got today's Pokémon Mystery Dungeon music within {{count}} second.",
+      "win_other": "You got today's Pokémon Mystery Dungeon music within {{count}} seconds.",
+      "lose": "You didn't get today's $t(heardleName) music.",
+      "link": "https://github.com/prateau/heardle-react"
+    }
   }
 }
