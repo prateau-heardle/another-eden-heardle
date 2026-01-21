@@ -11,6 +11,14 @@
       "title": "Support",
       "text": "<p>Vous avez des questions ou trouvez des bugs ? Contactez Ipfil sur Twitch ou sur Discord !</p>"
     },
+    "help": {
+      "title": "Comment jouer",
+      "listen": "Écoutez l'intro, puis trouvez la bonne musique Pokémon Donjon Mystère dans la liste.",
+      "progress": "Les tentatives passées ou incorrectes débloquent une plus grande partie de l'intro.",
+      "win": "Répondez en aussi peu d'essais que possible et partagez votre score !",
+      "list": "Vous pouvez voir la liste des musiques en cliquant sur le bouton en haut à droite.",
+      "play": "Jouer"
+    },
     "language": {
       "title": "Langues"
     }

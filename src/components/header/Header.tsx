@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import './Header.css'
 import ListIcon from '../../img/list.svg?react'
-import QuestionIcon from '../../img/question.svg?react'
 import StatsIcon from '../../img/stats.svg?react'
 import ModaleInfos from './ModaleInfo.tsx'
 import ModaleSupport from './ModaleSupport.tsx'
+import ModaleHelp from './ModaleHelp.tsx'
 import ModaleLanguage from './ModaleLanguage.tsx'
 
 const Header = () => {
@@ -15,9 +15,7 @@ const Header = () => {
 			<div className='header-content'>
 				<ModaleInfos />
 				<ModaleSupport />
-				<div className='header-icon-container'>
-					<QuestionIcon className='header-icon' />
-				</div>
+				<ModaleHelp />
 				<h1 className='header-title'>{t('title')}</h1>
 				<div className='header-icon-container'>
 					<StatsIcon className='header-icon' />
