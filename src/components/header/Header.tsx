@@ -1,20 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import './Header.css'
-import { Locales } from '../../config/i18n/i18n.ts'
 import ListIcon from '../../img/list.svg?react'
 import QuestionIcon from '../../img/question.svg?react'
 import StatsIcon from '../../img/stats.svg?react'
-import FlagFrIcon from '../../img/flagFr.svg?react'
 import ModaleInfos from './ModaleInfo.tsx'
 import ModaleSupport from './ModaleSupport.tsx'
+import ModaleLanguage from './ModaleLanguage.tsx'
 
 const Header = () => {
-	const { i18n, t } = useTranslation()
-
-	// TODO c'est vraiment utile ça ?
-	const changeLanguage = (lang: Locales) => {
-		i18n.changeLanguage(lang)
-	}
+	const { t } = useTranslation()
 
 	return (
 		<header className='header'>
@@ -31,9 +25,7 @@ const Header = () => {
 				<div className='header-icon-container'>
 					<ListIcon className='header-icon' />
 				</div>
-				<div className='header-icon-container'>
-					<FlagFrIcon className='header-icon' />
-				</div>
+				<ModaleLanguage />
 			</div>
 		</header>
 	)

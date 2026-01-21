@@ -10,6 +10,9 @@
     "about": {
       "title": "Support",
       "text": "<p>Have questions ? Run into bugs? DM Ipfil on Twitch or on Discord!</p>"
+    },
+    "language": {
+      "title": "Language"
     }
   },
   "game": {

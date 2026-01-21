@@ -10,6 +10,9 @@
     "about": {
       "title": "Support",
       "text": "<p>Vous avez des questions ou trouvez des bugs ? Contactez Ipfil sur Twitch ou sur Discord !</p>"
+    },
+    "language": {
+      "title": "Langues"
     }
   },
   "game": {
