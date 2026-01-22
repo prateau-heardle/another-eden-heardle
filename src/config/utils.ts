@@ -8,6 +8,14 @@ export const getToday = (): string => {
     return `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`
 }
 
+export const getShowHelp = (): boolean => {
+    return JSON.parse(window.localStorage.getItem(LocalStorageKeys.SHOW_HELP) || 'true')
+}
+
+export const setShowHelp = (showHelp: boolean) => {
+    window.localStorage.setItem(LocalStorageKeys.SHOW_HELP, showHelp.toString())
+}
+
 const getGameState = (): GameState[] => {
     return JSON.parse(window.localStorage.getItem(LocalStorageKeys.GAME_STATE) || '[]')
 }

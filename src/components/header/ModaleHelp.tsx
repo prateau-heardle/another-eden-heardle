@@ -8,11 +8,22 @@ import SoundIcon from '../../img/sound.svg?react'
 import ThumbIcon from '../../img/thumb.svg?react'
 import ListIcon from '../../img/list.svg?react'
 import Button, { Variant } from '../commons/Button.tsx'
+import { getShowHelp, setShowHelp } from '../../config/utils.ts'
 
 const ModaleHelp = () => {
 	const { t } = useTranslation()
 
-	const [isOpen, setIsOpen] = React.useState(false)
+	const [isOpen, setIsOpen] = React.useState(false) // TODO open la première fois
+
+	React.useEffect(() => {
+		const showHelp = getShowHelp()
+		setIsOpen(showHelp)
+	}, [])
+
+	const closeModale = () => {
+		setIsOpen(false)
+		setShowHelp(false)
+	}
 
 	return (<>
 		<div className='header-icon-container'>
@@ -21,7 +32,7 @@ const ModaleHelp = () => {
 		<Modale
 			title={t('header.help.title')}
 			isOpen={isOpen}
-			onClose={() => setIsOpen(false)}
+			onClose={closeModale}
 		>
             <div className='header-help-container'>
 		        <div className='header-help-item'>
@@ -40,7 +51,7 @@ const ModaleHelp = () => {
                     <ListIcon className='header-help-item-icon' />
 					<p>{t('header.help.list')}</p>
                 </div>
-				<Button label={t('header.help.play')} variant={Variant.Primary} onClick={() => setIsOpen(false)} />
+				<Button label={t('header.help.play')} variant={Variant.Primary} onClick={closeModale} />
             </div>
 		</Modale>
 	</>)
