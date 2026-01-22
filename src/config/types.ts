@@ -1,3 +1,19 @@
+export type MusicElementJson = {
+	id: number,
+	url: string,
+	name: {
+		[langKey: string]: string
+	},
+	category: number
+}
+
+export type CategoryJson = {
+	id: number,
+	name: {
+		[langKey: string]: string
+	},
+}
+
 export type MusicElement = {
 	id: number,
 	url: string,

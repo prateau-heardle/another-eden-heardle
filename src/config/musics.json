@@ -6,10 +6,7 @@
       "en": "Pokemon Rescue Team Theme",
       "fr": "Pokémon Équipe de secours – Thème"
     },
-    "category": {
-      "en": "Blue / Red Rescue Team",
-      "fr": "Équipe de Secours Rouge / Bleue"
-    }
+    "category": 0
   },
   {
     "id": 1,
@@ -18,10 +15,7 @@
       "en": "Top Menu",
       "fr": "Menu principal"
     },
-    "category": {
-      "en": "Blue / Red Rescue Team",
-      "fr": "Équipe de Secours Rouge / Bleue"
-    }
+    "category": 0
   },
   {
     "id": 2,
@@ -30,9 +24,15 @@
       "en": "In a Dream",
       "fr": "Dans un rêve"
     },
-    "category": {
-      "en": "Blue / Red Rescue Team",
-      "fr": "Équipe de Secours Rouge / Bleue"
-    }
-  }
+    "category": 0
+  },
+  {
+    "id": 3,
+    "url": "https://soundcloud.com/persona5royal/top-menu-pokemon-mystery",
+    "name": {
+      "en": "Top Menu",
+      "fr" : "Menu principal "
+    },
+    "category": 1
+  } 
 ]

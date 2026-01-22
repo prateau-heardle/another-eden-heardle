@@ -1,8 +1,9 @@
 import React from 'react'
 import musics from '../config/musics.json'
-import type { GameState, MusicElement } from '../config/types.ts'
+import categories from '../config/categories.json'
+import type { CategoryJson, GameState, MusicElement, MusicElementJson } from '../config/types.ts'
 import { getTodaySong } from './seededRng.ts'
-import { getGameStateDay, getToday, saveGameState, sortMusicById } from '../config/utils.ts'
+import { getGameStateDay, getToday, mapToMusic, saveGameState, sortMusicById } from '../config/utils.ts'
 
 export interface HeardleContextProps {
 	currentMusic: MusicElement,
@@ -22,7 +23,9 @@ const HeardleContext = ({ children }: React.PropsWithChildren) => {
 	const [musicImage, setMusicImage] = React.useState<string>()
 
 	const today = getToday()
-	const allMusics = (musics as MusicElement[]).sort(sortMusicById)
+	const allMusics = (musics as MusicElementJson[])
+		.map((music) => mapToMusic(music, categories as CategoryJson[]))
+		.sort(sortMusicById)
 	const currentMusic = getTodaySong(allMusics, today)
 
 	React.useEffect(() => {

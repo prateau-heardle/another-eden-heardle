@@ -1,5 +1,13 @@
 import { LocalStorageKeys } from './consts'
-import type { GameState, MusicElement } from './types'
+import type { CategoryJson, GameState, MusicElement, MusicElementJson } from './types'
+
+export const mapToMusic = (music: MusicElementJson, categories: CategoryJson[]): MusicElement => {
+    const category = categories.find(cat => cat.id === music.category)!.name
+    return {
+        ...music,
+        category
+    }
+}
 
 export const sortMusicById = (music1: MusicElement, music2: MusicElement): number => music2.id - music1.id
 
