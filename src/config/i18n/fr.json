@@ -51,7 +51,7 @@
     "share": "Partager",
     "copied": "Copié dans le presse papier !",
     "message": {
-      "title": "$t(heardleName) Heardle du {{date}}",
+      "title": "$t(heardleName) Heardle #{{dateId}}",
       "win_one": "Vous avez trouvé la musique $t(heardleName) d'aujourd'hui en {{count}} seconde.",
       "win_other": "Vous avez trouvé la musique $t(heardleName) d'aujourd'hui en {{count}} secondes.",
       "lose": "Vous n'avez pas trouvé la musique $t(heardleName) d'aujourd'hui",

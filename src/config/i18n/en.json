@@ -51,7 +51,7 @@
     "share": "Share",
     "copied": "Copied to Clipboard!",
     "message": {
-      "title": "$t(heardleName) Heardle",
+      "title": "$t(heardleName) Heardle #{{dateId}}",
       "win_one": "You got today's $t(heardleName) music within {{count}} second.",
       "win_other": "You got today's $t(heardleName) music within {{count}} seconds.",
       "lose": "You didn't get today's $t(heardleName) music.",

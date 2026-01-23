@@ -1,4 +1,4 @@
-import { LocalStorageKeys } from './consts'
+import { LocalStorageKeys, START_DATE } from './consts'
 import type { Category, GameState, MusicElement, MusicElementJson } from './types'
 
 export const mapToMusic = (music: MusicElementJson, categories: Category[]): MusicElement => {
@@ -13,9 +13,12 @@ export const sortMusicById = (music1: MusicElement, music2: MusicElement): numbe
 
 export const sortCategoryById = (category1: Category, category2: Category): number => category1.id - category2.id
 
-export const getToday = (): string => {
-	const today = new Date()
-    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+export const getTodayId = (): number => {
+	const todayDate = new Date()
+    const startDate = new Date(START_DATE)
+
+    const diffInMilliseconds = todayDate.getTime() - startDate.getTime()
+    return Math.trunc(diffInMilliseconds / (1000 * 60 * 60 * 24))
 }
 
 export const getShowHelp = (): boolean => {
@@ -26,16 +29,16 @@ export const setShowHelp = (showHelp: boolean) => {
     window.localStorage.setItem(LocalStorageKeys.SHOW_HELP, showHelp.toString())
 }
 
-const getGameState = (): GameState[] => {
+export const getGameState = (): GameState[] => {
     return JSON.parse(window.localStorage.getItem(LocalStorageKeys.GAME_STATE) || '[]')
 }
 
-export const getGameStateDay = (day: string): GameState | undefined => {
-    return getGameState().find(state => state.date === day)
+export const getGameStateDay = (dateId: number): GameState | undefined => {
+    return getGameState().find(state => state.dateId === dateId)
 }
 
 export const saveGameState = (gameState: GameState) => {
-    const oldState = getGameState().filter(state => state.date !== gameState.date)
+    const oldState = getGameState().filter(state => state.dateId !== gameState.dateId)
     window.localStorage.setItem(LocalStorageKeys.GAME_STATE, JSON.stringify([...oldState, gameState]))
 }
 

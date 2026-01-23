@@ -46,7 +46,7 @@ const Share = () => {
 
 	const share = () => {
 		const summary = '🔇' + HEARDLE_SPLITS.map((_, index) => getRecapEmoji(index)).join(' ')
-		const text = t('endPage.message.title', { date: gameState.date }) + '\n\n'
+		const text = t('endPage.message.title', { dateId: gameState.dateId }) + '\n\n'
 			+ (isWon
 				? t('endPage.message.win', { count: gameState.attempts.length })
 				: t('endPage.message.lose')

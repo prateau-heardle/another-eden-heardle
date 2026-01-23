@@ -3,7 +3,7 @@ import musics from '../config/musics.json'
 import categories from '../config/categories.json'
 import type { Category, GameState, MusicElement, MusicElementJson } from '../config/types.ts'
 import { getTodaySong } from './seededRng.ts'
-import { getGameStateDay, getToday, mapToMusic, saveGameState, sortCategoryById, sortMusicById } from '../config/utils.ts'
+import { getGameStateDay, getTodayId, mapToMusic, saveGameState, sortCategoryById, sortMusicById } from '../config/utils.ts'
 
 export interface HeardleContextProps {
 	currentMusic: MusicElement,
@@ -23,20 +23,20 @@ const HeardleContext = ({ children }: React.PropsWithChildren) => {
 	const [gameState, setGameState] = React.useState<GameState>()
 	const [musicImage, setMusicImage] = React.useState<string>()
 
-	const today = getToday()
+	const todayId = getTodayId()
 	const allCategories = (categories as Category[])
 		.sort(sortCategoryById)
 	const allMusics = (musics as MusicElementJson[])
 		.map((music) => mapToMusic(music, allCategories))
 		.sort(sortMusicById)
-	const currentMusic = getTodaySong(allMusics, today)
+	const currentMusic = getTodaySong(allMusics, todayId)
 
 	React.useEffect(() => {
-		setGameState(getGameStateDay(today) || { date: today, response: currentMusic.id, attempts: [] })
+		setGameState(getGameStateDay(todayId) || { dateId: todayId, response: currentMusic.id, attempts: [] })
 	}, [])
 
 	React.useEffect(() => {
-		if (gameState != undefined) {
+		if (gameState != undefined && gameState.attempts.length > 0) {
 			saveGameState(gameState)
 		}
 	}, [gameState])

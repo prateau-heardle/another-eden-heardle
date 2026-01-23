@@ -27,7 +27,7 @@ export type MusicElement = {
 }
 
 export type GameState = {
-	date: string,
+	dateId: number,
 	response: number,
 	attempts: (number | undefined)[]
 }
