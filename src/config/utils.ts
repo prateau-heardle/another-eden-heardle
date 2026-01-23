@@ -15,7 +15,7 @@ export const sortCategoryById = (category1: Category, category2: Category): numb
 
 export const getToday = (): string => {
 	const today = new Date()
-    return `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
 }
 
 export const getShowHelp = (): boolean => {

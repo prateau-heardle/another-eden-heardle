@@ -7,17 +7,13 @@ import FlagFrIcon from '../../img/flagFr.svg?react'
 import FlagGbIcon from '../../img/flagGb.svg?react'
 
 const ModaleLanguage = () => {
-	const { i18n, t } = useTranslation()
+	const { i18n : { changeLanguage, language }, t } = useTranslation()
 
 	const [isOpen, setIsOpen] = React.useState(false)
 
-	const changeLanguage = (lang: Locales) => {
-		i18n.changeLanguage(lang)
-	}
-
 	return (<>
 		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
-            {i18n.language === Locales.FR
+            {language === Locales.FR
                 ? <FlagFrIcon className='header-icon' />
                 : <FlagGbIcon className='header-icon' />
             }

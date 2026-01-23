@@ -6,7 +6,7 @@ import ListIcon from '../../img/list.svg?react'
 import { useHeardleContext } from '../../context/HeardleContext.tsx'
 
 const ModaleList = () => {
-	const { i18n, t } = useTranslation()
+	const { i18n : { language }, t } = useTranslation()
 	const { allMusics, allCategories } = useHeardleContext()
 
 	const [isOpen, setIsOpen] = React.useState(false)
@@ -22,13 +22,13 @@ const ModaleList = () => {
 		>
 			{allCategories.map((category) => (
 				<>
-					<h3 className='header-list-category'>{category.name[i18n.language]}</h3>
+					<h3 className='header-list-category'>{category.name[language]}</h3>
 					<ul className='header-list-container'>
 						{allMusics
 							.filter((music) => music.categoryId === category.id)
 							.map(m => (
 								<li className='header-list-item'>
-									<a target="_blank" href={m.url}>{m.name[i18n.language]}</a>
+									<a target="_blank" href={m.url}>{m.name[language]}</a>
 								</li>
 							))
 						}

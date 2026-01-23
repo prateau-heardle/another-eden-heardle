@@ -23,6 +23,7 @@ i18n
 	.use(LngDetector)
 	.init({
 		resources,
+		supportedLngs: [Locales.EN, Locales.FR],
 		fallbackLng: Locales.EN,
 		interpolation: {
 			escapeValue: false // react already safes from xss
