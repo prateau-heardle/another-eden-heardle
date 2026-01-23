@@ -16,10 +16,10 @@ const ModaleLanguage = () => {
 	}
 
 	return (<>
-		<div className='header-icon-container'>
+		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
             {i18n.language === Locales.FR
-                ? <FlagFrIcon className='header-icon' onClick={() => setIsOpen(true)} />
-                : <FlagGbIcon className='header-icon' onClick={() => setIsOpen(true)} />
+                ? <FlagFrIcon className='header-icon' />
+                : <FlagGbIcon className='header-icon' />
             }
 		</div>
 		<Modale
@@ -28,11 +28,11 @@ const ModaleLanguage = () => {
 			onClose={() => setIsOpen(false)}
 		>
             <div className='header-language-container'>
-		        <div className='header-language-icon-container'>
-                    <FlagFrIcon className='header-language-icon' onClick={() => changeLanguage(Locales.FR)} />
+		        <div className='header-language-icon-container' onClick={() => changeLanguage(Locales.FR)}>
+                    <FlagFrIcon className='header-language-icon' />
                 </div>
-		        <div className='header-language-icon-container'>
-                    <FlagGbIcon className='header-language-icon' onClick={() => changeLanguage(Locales.EN)} />
+		        <div className='header-language-icon-container' onClick={() => changeLanguage(Locales.EN)}>
+                    <FlagGbIcon className='header-language-icon' />
                 </div>
             </div>
 		</Modale>

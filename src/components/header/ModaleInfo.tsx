@@ -10,8 +10,8 @@ const ModaleInfos = () => {
 	const [isOpen, setIsOpen] = React.useState(false)
 
 	return (<>
-		<div className='header-icon-container'>
-			<InfoIcon className='header-icon' onClick={() => setIsOpen(true)} />
+		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+			<InfoIcon className='header-icon' />
 		</div>
 		<Modale
 			title={t('header.infos.title')}

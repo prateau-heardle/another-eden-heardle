@@ -26,8 +26,8 @@ const ModaleHelp = () => {
 	}
 
 	return (<>
-		<div className='header-icon-container'>
-            <QuestionIcon className='header-icon' onClick={() => setIsOpen(true)} />
+		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+            <QuestionIcon className='header-icon' />
 		</div>
 		<Modale
 			title={t('header.help.title')}
