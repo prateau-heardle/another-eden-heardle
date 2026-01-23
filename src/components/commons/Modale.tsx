@@ -20,7 +20,7 @@ const Modale = ({ title, isOpen, onClose, children }: React.PropsWithChildren<Pr
                 <div className='modale-header'>
                     <div />
                     <h2 className='modale-title'>{title}</h2>
-                    <CrossIcon role='button' className='modale-close-icon' onClick={onClose}/>
+                    <CrossIcon role='button' tabIndex={0} className='modale-close-icon' onClick={onClose}/>
                 </div>
                 {children}
             </div>

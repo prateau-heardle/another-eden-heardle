@@ -12,12 +12,12 @@ const ModaleLanguage = () => {
 	const [isOpen, setIsOpen] = React.useState(false)
 
 	return (<>
-		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+		<button className='header-icon-container' onClick={() => setIsOpen(true)}>
             {language === Locales.FR
                 ? <FlagFrIcon className='header-icon' />
                 : <FlagGbIcon className='header-icon' />
             }
-		</div>
+		</button>
 		<Modale
 			title={t('header.language.title')}
 			isOpen={isOpen}

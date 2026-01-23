@@ -12,9 +12,9 @@ const ModaleList = () => {
 	const [isOpen, setIsOpen] = React.useState(false)
 
 	return (<>
-		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+		<button className='header-icon-container' onClick={() => setIsOpen(true)}>
             <ListIcon className='header-icon' />
-		</div>
+		</button>
 		<Modale
 			title={t('header.list.title')}
 			isOpen={isOpen}

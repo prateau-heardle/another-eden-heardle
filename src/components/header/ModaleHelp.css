@@ -1,7 +1,6 @@
 .header-help-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 16px;
 }
 
@@ -16,4 +15,10 @@
     height: 32px;
     flex-shrink: 0;
     color: #888888
+}
+
+.header-help-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

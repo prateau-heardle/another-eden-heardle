@@ -2,12 +2,26 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 500px;
+}
+
+@media (max-width: 600px) {
+    .header-stats-container {
+    width: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-stats-container {
+    width: 200px;
+    }
 }
 
 .header-stats-item-container {
     display: flex;
     justify-content: space-around;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .header-stats-item {

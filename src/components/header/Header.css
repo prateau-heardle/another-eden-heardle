@@ -36,6 +36,9 @@
     width: 40px;
     flex-shrink: 0;
     padding: 8px;
+    background: none;
+    border: none;
+    color: #ffffff;
 
     border-radius: 100%;
     cursor: pointer;

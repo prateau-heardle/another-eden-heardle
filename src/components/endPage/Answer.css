@@ -47,9 +47,31 @@
     font-size: 0.875rem;
 }
 
-.soundcloud-icon {
+.soundcloud-icon-link {
     display: flex;
-    gap: 2px;
+    align-items: center;
     flex-shrink: 0;
+}
+
+.soundcloud-icon-link img {
+    height: 32px;
+}
+
+.soundcloud-icon-link svg {
     height: 16px;
+    margin-left: 2px;
+}
+
+.soundcloud-icon-small {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .soundcloud-icon-big {
+        display: none;
+    }
+
+    .soundcloud-icon-small {
+        display: block;
+    }
 }

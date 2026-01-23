@@ -78,9 +78,9 @@ const ModaleStats = () => {
 	}
 
 	return (<>
-		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+		<button className='header-icon-container' onClick={() => setIsOpen(true)}>
 			<StatsIcon className='header-icon' />
-		</div>
+		</button>
 		<Modale
 			title={t('header.stats.title')}
 			isOpen={isOpen}

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 import { useHeardleContext } from '../../context/HeardleContext'
 import ArrowRightIcon from '../../img/arrowRight.svg?react'
-import SoundcloudIcon from '../../img/soundcloud.svg?react'
+import SoundcloudIcon from '../../img/soundcloud.png'
+import SoundcloudShortIcon from '../../img/soundcloudShort.png'
 import './Answer.css'
 
 const Answer = () => {
@@ -19,8 +20,9 @@ const Answer = () => {
 					<p className='soundcloud-music-category'>{currentMusic.category[language]}</p>
 					<p className='soundcloud-music-name'>{currentMusic.name[language]}</p>
 				</div>
-				<div className='soundcloud-icon'>
-					<SoundcloudIcon />
+				<div className='soundcloud-icon-link'>
+					<img className='soundcloud-icon-big' src={SoundcloudIcon} />
+					<img className='soundcloud-icon-small' src={SoundcloudShortIcon} />
 					<ArrowRightIcon />
 				</div>
 			</a>

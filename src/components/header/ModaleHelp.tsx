@@ -26,9 +26,9 @@ const ModaleHelp = () => {
 	}
 
 	return (<>
-		<div className='header-icon-container' onClick={() => setIsOpen(true)}>
+		<button className='header-icon-container' onClick={() => setIsOpen(true)}>
             <QuestionIcon className='header-icon' />
-		</div>
+		</button>
 		<Modale
 			title={t('header.help.title')}
 			isOpen={isOpen}
@@ -51,7 +51,9 @@ const ModaleHelp = () => {
                     <ListIcon className='header-help-item-icon' />
 					<p>{t('header.help.list')}</p>
                 </div>
-				<Button label={t('header.help.play')} variant={Variant.Primary} onClick={closeModale} />
+				<div className='header-help-button'>
+					<Button label={t('header.help.play')} variant={Variant.Primary} onClick={closeModale} />
+				</div>
             </div>
 		</Modale>
 	</>)
