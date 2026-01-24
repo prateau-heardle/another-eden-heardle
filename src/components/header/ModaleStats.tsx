@@ -39,7 +39,7 @@ const getDataFromHistory = (history: GameState[]): number[] => (
 		if (state.attempts.includes(state.response)) {
 			result[state.attempts.length - 1] += 1
 		} else {
-			result[HEARDLE_SPLITS.length] += 1
+			result[HEARDLE_SPLITS.length -1] += 1
 		}
 		return result
 	}, Array(HEARDLE_SPLITS.length).fill(0))
