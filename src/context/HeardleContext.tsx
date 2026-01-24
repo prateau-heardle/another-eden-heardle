@@ -33,6 +33,14 @@ const HeardleContext = ({ children }: React.PropsWithChildren) => {
 
 	React.useEffect(() => {
 		setGameState(getGameStateDay(todayId) || { dateId: todayId, response: currentMusic.id, attempts: [] })
+	}, [todayId])
+
+	React.useEffect(() => {
+		setInterval(() => {
+			if (getTodayId() !== todayId) {
+				window.location.reload()
+			}
+		}, 1000)
 	}, [])
 
 	React.useEffect(() => {
