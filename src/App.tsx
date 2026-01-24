@@ -11,12 +11,9 @@ const App = () => {
         routes[ROUTES.DAILY]().replace()
     }
 
-    // TODO redirection vers le mode infini
     return (
         <HeardleContext>
             <main className='main'>
-                <a {...routes[ROUTES.DAILY]().link}>Daily</a>
-                <a {...routes[ROUTES.INFINITE]().link}>Infinity</a>
                 <Header />
                 <Content />
             </main>

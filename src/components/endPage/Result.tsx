@@ -80,6 +80,11 @@ const Result = () => {
 					onClick={nextMusic}
 					variant={Variant.Primary}
 				/>
+				<Button
+					label={t('endPage.toDaily')}
+					onClick={routes[ROUTES.DAILY]().link.onClick}
+					variant={Variant.Primary}
+				/>
 			</>) : (<>
 				<p className='recap-phrase'>{isWon ? t('endPage.win', { count: HEARDLE_SPLITS[gameState.attempts.length - 1] }) : t('endPage.lose')}</p>
 				<Button
