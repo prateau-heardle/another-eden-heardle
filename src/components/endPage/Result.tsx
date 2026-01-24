@@ -1,17 +1,18 @@
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
-import './Share.css'
+import './Result.css'
 import { useHeardleContext } from '../../context/HeardleContext'
 import { HEARDLE_SPLITS } from '../../config/consts'
 import Button, { Variant } from '../commons/Button'
 import { isGameWon } from '../../config/utils'
+import { routes, ROUTES } from '../../config/router'
 
 const COPIED_MESSAGE_TIMEOUT = 2000
 
-const Share = () => {
+const Result = () => {
 	const { t } = useTranslation()
-	const { currentMusic, gameState } = useHeardleContext()
+	const { currentMusic, gameState, isInfinite, nextMusic } = useHeardleContext()
 
 	const [showCopied, setShowCopied] = React.useState(false)
 
@@ -72,12 +73,26 @@ const Share = () => {
 					<div className={classNames('recap-block', getRecapClassname(index))} />
 				))}
 			</div>
-			<p className='recap-phrase'>{isWon ? t('endPage.win', { count: gameState.attempts.length }) : t('endPage.lose')}</p>
-			<Button
-				label={t('endPage.share')}
-				onClick={share}
-				variant={Variant.Primary}
-			/>
+			{isInfinite ? (<>
+				<p className='recap-phrase'>{isWon ? t('endPage.infinite.win', { count: HEARDLE_SPLITS[gameState.attempts.length - 1] }) : t('endPage.infinite.lose')}</p>
+				<Button
+					label={t('endPage.infinite.next')}
+					onClick={nextMusic}
+					variant={Variant.Primary}
+				/>
+			</>) : (<>
+				<p className='recap-phrase'>{isWon ? t('endPage.win', { count: HEARDLE_SPLITS[gameState.attempts.length - 1] }) : t('endPage.lose')}</p>
+				<Button
+					label={t('endPage.share')}
+					onClick={share}
+					variant={Variant.Primary}
+				/>
+				<Button
+					label={t('endPage.toInfinite')}
+					onClick={routes[ROUTES.INFINITE]().link.onClick}
+					variant={Variant.Primary}
+				/>
+			</>)}
 			{showCopied && (
 				<p className='share-copied'>{t('endPage.copied')}</p>
 			)}
@@ -85,4 +100,4 @@ const Share = () => {
 	)
 }
 
-export default Share
+export default Result

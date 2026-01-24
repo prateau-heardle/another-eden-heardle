@@ -39,10 +39,10 @@ const getDataFromHistory = (history: GameState[]): number[] => (
 		if (state.attempts.includes(state.response)) {
 			result[state.attempts.length - 1] += 1
 		} else {
-			result[HEARDLE_SPLITS.length -1] += 1
+			result[HEARDLE_SPLITS.length] += 1
 		}
 		return result
-	}, Array(HEARDLE_SPLITS.length).fill(0))
+	}, Array(HEARDLE_SPLITS.length + 1).fill(0))
 )
 
 const ModaleStats = () => {
@@ -69,10 +69,10 @@ const ModaleStats = () => {
 	const maxStreak = Math.max(0, ...allStreaks.map(streak => streak.length))
 
 	const data = {
-		labels: [...Array.from({ length: HEARDLE_SPLITS.length - 1 }, (_, i) => i + 1), 'X'],
+		labels: [...Array.from({ length: HEARDLE_SPLITS.length }, (_, i) => i + 1), 'X'],
 		datasets: [{
 			data: getDataFromHistory(currentHistory),
-			backgroundColor: [...Array(HEARDLE_SPLITS.length - 1).fill('#1d7e05'), '#ff0000']
+			backgroundColor: [...Array(HEARDLE_SPLITS.length).fill('#1d7e05'), '#ff0000']
 		}]
 	}
 

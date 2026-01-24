@@ -58,6 +58,13 @@
     "win_other": "Vous avez trouvé la musique $t(heardleName) d'aujourd'hui en {{count}} secondes.",
     "share": "Partager",
     "copied": "Copié dans le presse papier !",
+    "toInfinite": "Jouer au mode infini",
+    "infinite": {
+      "lose": "Vous n'avez pas trouvé cette musique $t(heardleName)",
+      "win_one": "Vous avez trouvé cette musique $t(heardleName) en {{count}} seconde.",
+      "win_other": "Vous avez trouvé cette musique $t(heardleName) en {{count}} secondes.",
+      "next": "Musique suivante"
+    },
     "message": {
       "title": "$t(heardleName) Heardle #{{dateId}}",
       "win_one": "Vous avez trouvé la musique $t(heardleName) d'aujourd'hui en {{count}} seconde.",

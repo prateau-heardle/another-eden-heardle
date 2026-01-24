@@ -1,5 +1,5 @@
 import Answer from './endPage/Answer.tsx'
-import Share from './endPage/Share.tsx'
+import Result from './endPage/Result.tsx'
 import TimerToNext from './endPage/TimerToNext.tsx'
 import AudioPlayer from './audioPlayer/AudioPlayer.tsx'
 import AttemptList from './attempts/AttemptList.tsx'
@@ -9,7 +9,7 @@ import './Content.css'
 import { isGameFinished } from '../config/utils.ts'
 
 const Content = () => {
-    const { gameState } = useHeardleContext()
+    const { gameState, isInfinite } = useHeardleContext()
 
     const isFinished = isGameFinished(gameState)
 
@@ -18,8 +18,8 @@ const Content = () => {
             <>
                 <div className='content-middle'>
                     <Answer />
-                    <Share />
-                    <TimerToNext />
+                    <Result />
+                    {isInfinite ? <div /> : <TimerToNext />}
                 </div>
                 <div className='content-bottom'>
                     <AudioPlayer key={gameState.response} isFinished />

@@ -58,6 +58,13 @@
     "win_other": "You got today's $t(heardleName) music within {{count}} seconds.",
     "share": "Share",
     "copied": "Copied to Clipboard!",
+    "toInfinite": "Play infinite mode",
+    "infinite": {
+      "lose": "You didn't get this $t(heardleName) music.",
+      "win_one": "You got this $t(heardleName) music within {{count}} second.",
+      "win_other": "You got this $t(heardleName) music within {{count}} seconds.",
+      "next": "Next music"
+    },
     "message": {
       "title": "$t(heardleName) Heardle #{{dateId}}",
       "win_one": "You got today's $t(heardleName) music within {{count}} second.",
