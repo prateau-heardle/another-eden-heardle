@@ -1,75 +1,113 @@
-# 🚧 WIP
+# Heardle React
 
-- node 22
-- TODO change state name
-- flags from https://github.com/lipis/flag-icons
+This project is a Heardle game base written in React whose goal is to provide an easier way to create your own Heardle app (easier than editing the minified code). This also allow to have a common base for multiple Heardle games.
 
-# React + TypeScript + Vite
+This project combine a daily Heardle and an infinite version.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a recreation of the multiple "glitch.me" Heardle games, more specifically the [Pokemon Infinite Heardle](https://nterrien.github.io/pkmn-infinite-heardle/)
 
-Currently, two official plugins are available:
+Preview here : https://prateau-base.github.io/heardle-react/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Create your own Heardle
 
-## Expanding the ESLint configuration
+You can fork this project to create your own Heardle game.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Add music
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
+The first step is to replace the content of the `src/config/categories.json` and `src/config/music.json` file with your musics.
+
+The data must be in this format :
+- `src/config/categories.json` :
+```json
+[
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+    "id": {unique id for the category},
+    "name": {
+      "en": {the name of the category in english},
+      {you can add other languages here}
+    }
   },
-])
+  {other categories}
+]
+```
+- `src/config/musics.json` :
+```json
+[
+  {
+    "id": {unique id for the music},
+    "url": {soundclound link},
+    "name": {
+      "en": {the name of the music in english},
+      {you can add other languages here}
+    },
+    "categoryId": {id of the coresponding category}
+  },
+]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> ℹ️  The musics and categories are sorted by id in the modale that lists all musics.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Wording
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The localization is powered by i18next. To edit the wording, you can modify the files `src/config/i18n/en.json` and `src/config/i18n/fr.json`.
+
+By default, the app support English and French, see the next section if you want to add or remove a language.
+
+You will likely have to change the content of the the following traduction keys :
+- `heardleName`
+- `header.infos.text`
+- `header.about.text`
+- `endPage.message.link`
+
+#### Add / Remove a language
+
+TODO write this part of the doc
+
+### Other changes
+
+- To change the tab icon, you can replace the `public/favicon.png` file.
+- To modify the title of the tab, you can change the content of the `<title>` tag in `index/html`
+- In the file `src/config/const.ts`, you can :
+  - change `HEARDLE_SPLITS` if you want custom splits to your heardle
+  - change `START_DATE` to change the id of your daily heardle
+  - change the name of the elements in `LocalStorageKeys`. This is important if you plan to host multiple heardle on the same domain, **each Heardle must have differents local storage keys**
+
+### Deployment
+
+This project auto builds on github page folowing this exemple : https://github.com/sitek94/vite-deploy-demo
+
+The workflows auto create a branch `gh-pages` ready to be published with [Github Pages](https://pages.github.com/). To enable the auto publish it you have to :
+- Enable Actions for this project
+- Ensure Actions have `write` permission (https://github.com/sitek94/vite-deploy-demo?tab=readme-ov-file#ensure-actions-have-write-permission)
+- Configure Github Pages to use the branch `gh-pages` (https://github.com/sitek94/vite-deploy-demo?tab=readme-ov-file#enable-github-pages)
+- Modify the base url in `vite.config.ts` (https://github.com/sitek94/vite-deploy-demo?tab=readme-ov-file#fix-assets-links)
+
+## Developpement
+
+This project runs with node 22. To setup the project just run
+
 ```
+npm install
+```
+
+Then you can start the project with
+
+```
+npm run dev
+```
+
+## Credits
+
+- This app is written in Typescript with Vite and React
+- souncloud API
+- The fr and gb flags come from https://github.com/lipis/flag-icons
+
+## Future changes
+
+- better responsive for the header menu
+- work on accessibility
+- add history in the stats modale
+- add a volume bar
+- add a menu to filter musics with their categories
+- translate html title
+- better link
