@@ -1,21 +1,16 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LngDetector from 'i18next-browser-languagedetector'
-import fr from './fr.json'
 import en from './en.json'
 
 export enum Locales {
-	EN = 'en',
-	FR = 'fr'
+	EN = 'en'
 }
 
 const resources = {
 	[Locales.EN]: {
 		translation : en
-	},
-	[Locales.FR]: {
-		translation : fr
-	},
+	}
 }
 
 i18n
@@ -23,7 +18,7 @@ i18n
 	.use(LngDetector)
 	.init({
 		resources,
-		supportedLngs: [Locales.EN, Locales.FR],
+		supportedLngs: [Locales.EN],
 		fallbackLng: Locales.EN,
 		interpolation: {
 			escapeValue: false // react already safes from xss

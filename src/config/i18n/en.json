@@ -1,11 +1,11 @@
 {
-  "heardleName": "React",
+  "heardleName": "Another Eden",
   "title": "$t(heardleName) Heardle",
   "infiniteTitle": "$t(heardleName) Infinite Heardle",
   "header": {
     "infos": {
       "title": "About",
-      "text": "<p>A Heardle made React.</p><p>To create your own Heardle game, see <a href=\"https://github.com/prateau/heardle-react\">here</a></p>",
+      "text": "<p>A Heardle with Another Eden music.</p><p>Each Another Eden Heardle is randomly chosen from Another Eden's soundtrack albums.</p><p>Pretty much all the info on the musics comes from <a href=\"https://www.anothereden.wiki/w/Background_Music\">this page on the wiki</a>.</p><p>The song are formated this way : \"{song name} [{the places where it is used}] - {the content it comes from}\"</p><p>To create your own Heardle game, see <a href=\"https://github.com/prateau/heardle-react\">here</a></p>",
       "subText": "Based on <a href=\"https://github.com/prateau/heardle-react\">heardle react</a>"
     },
     "about": {
@@ -74,7 +74,7 @@
       "win_one": "You got today's $t(heardleName) music within {{count}} second.",
       "win_other": "You got today's $t(heardleName) music within {{count}} seconds.",
       "lose": "You didn't get today's $t(heardleName) music.",
-      "link": "https://github.com/prateau/heardle-react"
+      "link": "https://github.com/prateau-heardle/another-eden-heardle"
     }
   }
 }

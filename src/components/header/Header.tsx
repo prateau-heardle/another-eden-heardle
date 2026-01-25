@@ -3,7 +3,6 @@ import './Header.css'
 import ModaleInfos from './ModaleInfo.tsx'
 import ModaleSupport from './ModaleSupport.tsx'
 import ModaleHelp from './ModaleHelp.tsx'
-import ModaleLanguage from './ModaleLanguage.tsx'
 import ModaleList from './ModaleList.tsx'
 import ModaleStats from './ModaleStats.tsx'
 import { useHeardleContext } from '../../context/HeardleContext.tsx'
@@ -21,7 +20,6 @@ const Header = () => {
 				<h1 className='header-title'>{isInfinite ? t('infiniteTitle') : t('title')}</h1>
 				<ModaleStats />
 				<ModaleList />
-				<ModaleLanguage />
 			</div>
 		</header>
 	)

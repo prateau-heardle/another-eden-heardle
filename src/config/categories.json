@@ -2,15 +2,37 @@
   {
     "id": 0,
     "name": {
-      "en": "Blue / Red Rescue Team",
-      "fr": "Équipe de Secours Rouge / Bleue"
+      "en": "Another Eden Original Soundtrack 1"
     }
   },
   {
     "id": 1,
     "name": {
-      "en": "Rescue Team DX",
-      "fr": "Équipe de Secours DX"
+      "en": "Another Eden Original Soundtrack 2"
+    }
+  },
+  {
+    "id": 2,
+    "name": {
+      "en": "Another Eden Original Soundtrack 3"
+    }
+  },
+  {
+    "id": 3,
+    "name": {
+      "en": "Another Eden Original Soundtrack 4"
+    }
+  },
+  {
+    "id": 4,
+    "name": {
+      "en": "Another Eden Original Soundtrack 5"
+    }
+  },
+  {
+    "id": 5,
+    "name": {
+      "en": "Another Eden Original Soundtrack 6"
     }
   }
 ]
