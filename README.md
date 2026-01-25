@@ -6,11 +6,13 @@ This project combine a daily Heardle and an infinite version.
 
 This is a recreation of the multiple "glitch.me" Heardle games, more specifically the [Pokemon Infinite Heardle](https://nterrien.github.io/pkmn-infinite-heardle/)
 
-Preview here : https://prateau-base.github.io/heardle-react/
+Preview here : https://prateau.github.io/heardle-react/
 
 ## Create your own Heardle
 
 You can fork this project to create your own Heardle game.
+
+You may need to create a github organization to fork this project multiple times
 
 ### Add music
 
